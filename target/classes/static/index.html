@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.0/examples/cover/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+
+    <title>Bolsa de Valores</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="js/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="js/cover.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+
+    <div class="grid-y cover-container d-flex h-100 p-3">
+        <header class="masthead mb-auto ">
+            <div class="container">
+                <h3>Consulta de mercados de la Bolsa</h3>
+                <p>Esta aplicación permite consultar el histórico de la valoración intra-día, diaria, semanal o mensual.</p>
+                <div class="container">
+                    <h4>Ingrese el identificador </h4>
+                    <input id="identifier" type="text" class="btn btn-lg btn-default"> 
+                </div><br>
+                <!--nav class="nav nav-masthead justify-content-center"-->
+                <a type="button" class="btn btn-dark" onclick="ConsultControllerModule.getConsult($('#identifier').val(),'TIME_SERIES_INTRADAY')" style="color:#343a40">Intra-día</a>
+                <a type="button" class="btn btn-dark" onclick="ConsultControllerModule.getConsult($('#identifier').val(),'TIME_SERIES_DAILY')"style="color:#343a40">Diaria</a>
+                <a type="button" class="btn btn-dark" onclick="ConsultControllerModule.getConsult($('#identifier').val(),'TIME_SERIES_WEEKLY')"style="color:#343a40">Semanal</a>
+                <a type="button" class="btn btn-dark" onclick="ConsultControllerModule.getConsult($('#identifier').val(),'TIME_SERIES_MONTHLY')"style="color:#343a40">Mensual</a>
+            </div>
+        </header>
+        <br>
+        <table id="tableConsult" class="table table-sm table-dark"></table>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-3.2.1.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ConsultController.js"></script>
+    <script src="js/ConsultRestController.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</body></html>
